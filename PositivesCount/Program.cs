@@ -18,7 +18,6 @@
                 Console.WriteLine("Παρακαλώ εισάγετε έναν αριθμό:");
             }
             Console.WriteLine($"Πλήθος θετικών αριθμών: {count}");
-            Console.WriteLine("Ghoooost");
         }
     }
 }
