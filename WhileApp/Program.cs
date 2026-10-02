@@ -4,11 +4,18 @@
     {
         static void Main(string[] args)
         {
-            const int END = 3;
+            int inputNumber = 0;
             int sum = 0;
             int i = 0;
 
-            while (i < END)
+            Console.Write("Enter Input: ");
+            if (!int.TryParse(Console.ReadLine(), out inputNumber) || inputNumber < 0 )
+            {
+                Console.WriteLine("Wrong input type");
+                return;
+            }
+
+            while (i < inputNumber)
             {
                 sum += i;
                 i++;
