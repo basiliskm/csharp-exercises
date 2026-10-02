@@ -9,16 +9,29 @@ namespace PowerApp
     {
         static void Main(string[] args)
         {
-            const int BASE = 2;
-            const int POWER = 10;
+            int baseNumber = 0;
+            int powerNumber = 0;
             BigInteger result = 1;
 
-            for (int i = 1; i <= POWER; i++)
+            Console.WriteLine("Εισάγετε τιμή Βάσης");
+            if (!int.TryParse(Console.ReadLine(), out baseNumber) || baseNumber < 0)
             {
-                result *= BASE;
+                Console.WriteLine("Η τιμή που εισάγατε δεν είναι έγκυρος αριθμός");
+                return;
             }
+            Console.WriteLine("Εισάγετε τιμή Δύναμης");
+            if (!int.TryParse(Console.ReadLine(), out powerNumber) || powerNumber < 0)
+            {
+                Console.WriteLine("Η τιμή που εισάγατε δεν είναι έγκυρος αριθμός");
+                return;
+            }
+            
 
-            Console.WriteLine($"Result: {result}");
+            for (int i = 1; i <= powerNumber; i++)
+            {
+                result *= baseNumber;
+            }
+            Console.WriteLine($"Αποτέλεσμα: {result}");
         }
     }
 }
