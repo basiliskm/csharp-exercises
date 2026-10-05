@@ -27,6 +27,13 @@ internal class Point : IEquatable<Point>, IComparable<Point>
 
     public override bool Equals(object? obj) => Equals(obj as Point);
 
+    // Όταν κάνεις override την Equals, πρέπει να κάνεις και την GetHashCode:
+    // δύο "ίσα" αντικείμενα πρέπει να έχουν ίδιο hash code (χρειάζεται σε HashSet / Dictionary)
+    public override int GetHashCode() => X.GetHashCode();
+
+    // Για να τυπώνεται ωραία, π.χ. "Point(7)" αντί για "OperatorOverloading.Point"
+    public override string ToString() => $"Point({X})";
+
     public int CompareTo(Point? other)
     {
         if (other is null) return 1;
