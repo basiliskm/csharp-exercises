@@ -38,6 +38,17 @@ internal class Program
         Stack<int> stack = new Stack<int>([1, 2, 3]);
 
         // List API
+        Console.OutputEncoding = System.Text.Encoding.UTF8;   // για να φαίνονται σωστά τα ελληνικά
+        Console.WriteLine("=== List ===");
+        Console.WriteLine("Πριν:  " + string.Join(", ", list));
+        ListAPI(list);
+        Console.WriteLine("Μετά:  " + string.Join(", ", list));
+        Console.WriteLine();
+
+        // LinkedList API
+        Console.WriteLine("=== LinkedList ===");
+        LinkedList<string> linkedList = new();
+        LinkedListAPI(linkedList);
 
     }
 
